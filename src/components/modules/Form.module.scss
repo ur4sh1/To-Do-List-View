@@ -1,0 +1,41 @@
+@import './Responsive.scss';
+
+.form {
+  height: 54px;
+  width: 100%;
+  gap: 0.5rem;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  bottom: 27px;
+  position: relative;
+
+  @include responsive {
+    padding: 0.1rem 2rem;
+  }
+}
+
+.input {
+  background: var(--gray-500);
+  color: var(--gray-700);
+  border-radius: 8px;
+  width: 638px;
+  padding: 16px;
+  border: 1px solid var(--gray-700);
+  font-size: 1rem;
+}
+
+.input::placeholder {
+  color: var(--gray-300);
+}
+
+.button{
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  width: 90px;
+  border-radius: 8px;
+  padding: 16px;
+  border: 0;
+  font-size: 1rem;
+}
