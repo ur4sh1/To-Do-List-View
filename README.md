@@ -5,13 +5,13 @@
 ## :memo: Descrição
 Uma simples lista de tarefas
 
-## :books: Funcionalidades
+## :heavy_check_mark: Funcionalidades
 * Adicionar novas tarefas
 * Exibir tarefas pendentes e finalizadas
 
 ## :wrench: Tecnologias utilizadas
 * Vite;
 
-## :file_cabinet: Bibliotecas usadas
+## :package: Bibliotecas usadas
 * react-icons
 * sass
