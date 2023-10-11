@@ -1,0 +1,48 @@
+.task {
+  width: 100%;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.task p {
+  font-size: 0.875rem;
+  line-height: 1.18rem;
+  color: var(--gray-100);
+  margin-right: auto;
+}
+
+.delet {
+  background: none;
+  border: none;
+  color: var(--gray-300);
+}
+
+.check {
+  background: none;
+  min-width: 1.125rem;
+  height: 1.125rem;
+  border: none;
+}
+
+.check div {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--blue);
+
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
