@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import styles from "../modules/Form.module.scss";
+import styles from "./Form.module.scss";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 
 interface Props {

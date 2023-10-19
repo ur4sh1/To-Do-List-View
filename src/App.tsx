@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form } from "./components/Form/Form.component";
 import { Header } from "./components/Header/header.component";
 import { Tasks } from "./components/Tasks/Tasks.component";
+
+const LOCAL_STORAGE_KEY = "todo-list-view:savedTasks";
 
 export interface ITask {
   id: string;
@@ -10,21 +12,26 @@ export interface ITask {
 }
 
 export function App() {
-  const [tasks, setTasks] = useState<ITask[]>([
-    {
-      id: "teste",
-      title: "opa",
-      isCompleted: true,
-    },
-    {
-      id: "teste2",
-      title: "opa123",
-      isCompleted: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState<ITask[]>([]);
+
+  function LoadOnLocalStorage() {
+    const dbStorage = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (dbStorage) {
+      setTasks(JSON.parse(dbStorage));
+    }
+  }
+
+  useEffect(() => {
+    LoadOnLocalStorage();
+  }, []);
+
+  function SaveOnLocalStorage(newTasks: ITask[]) {
+    setTasks(newTasks);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTasks));
+  }
 
   function addTask(taskTitle: string) {
-    setTasks([
+    SaveOnLocalStorage([
       ...tasks,
       {
         id: crypto.randomUUID(),
@@ -36,14 +43,32 @@ export function App() {
 
   function deleteTask(taskId: string) {
     const newTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(newTasks);
+    SaveOnLocalStorage(newTasks);
+  }
+
+  function handleClickTaskCompleted(taskId: string) {
+    const newTask = tasks.map((task) => {
+      if (task.id === taskId) {
+        return {
+          ...task,
+          isCompleted: !task.isCompleted,
+        };
+      }
+      return task;
+    });
+
+    SaveOnLocalStorage(newTask);
   }
 
   return (
     <>
       <Header />
       <Form addTask={addTask} />
-      <Tasks tasks={tasks} deleteTask={deleteTask} />
+      <Tasks
+        tasks={tasks}
+        deleteTask={deleteTask}
+        onComplete={handleClickTaskCompleted}
+      />
     </>
   );
 }

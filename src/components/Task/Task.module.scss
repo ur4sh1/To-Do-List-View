@@ -22,6 +22,11 @@
   margin-right: auto;
 }
 
+p.textCompleted {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
 .delet {
   background: none;
   border: none;
@@ -35,6 +40,12 @@
   border: none;
 }
 
+.check svg {
+  width: 100%;
+  height: 100%;
+  color: var(--purple);
+}
+
 .check div {
   width: 100%;
   height: 100%;
@@ -46,3 +57,4 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+
