@@ -1,6 +1,6 @@
 ## <h1 align="center">:file_cabinet:To-Do-List-View</h1>
 
-<!-- <img align="left" title="To-Do-List-View" src="#" /> -->
+<img align="center" title="To-Do-List-View" src="https://github.com/ur4sh1/To-Do-List-View/blob/main/public/2023-10-19%20.png" />
 
 ## :memo: Descrição
 Uma simples lista de tarefas
